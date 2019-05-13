@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
       Tasks.associate = function (models) {
         //this is to say that a task belongs to a certain User
         //a task cannot be created without a user associated to it.
-        Tasks.belongsTo(models.Users, {
+        Tasks.belongsTo(models.User, {
           foreignKey: {
             allowNull: false
           }
