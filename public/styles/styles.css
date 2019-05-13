@@ -1,11 +1,19 @@
 .list-group-item {
   line-height: 2.5;
 }
-#home {
+#login {
   height: 100%;
   min-height: 100vh;
   padding-top: 4rem;
   background-image: url("../images/background-2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#signup {
+  height: 100%;
+  min-height: 100vh;
+  padding-top: 4rem;
+  background-image: url("../images/background-3.jpg");
   background-position: center;
   background-size: cover;
 }

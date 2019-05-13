@@ -1,46 +1,52 @@
 <div id="background-image">
   <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/logout">
+          Logout
+        </a>
+      </div>
     </div>
-  </div>
   </nav>
-  <div class="container mx-auto">
+  <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>Welcome <span class="member-name"></span></h2>
       </div>
     </div>
-    <div class="row">
+    
+    <div class="row card">
       <div class="col-md-8 offset-md-2">
 				<div class="task-container">
-					<h1>Tasks</h1>
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Current Tasks</th>
-								<th>Points for task</th>
-								<th>complete task</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr id="form-row">
-								<form id="task-form">
-									<td colspan="4">
-									</td>
-								</form>
-							</tr>
-						</tbody>
-					</table>
+          <h1>Tasks</h1>
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Current Tasks</th>
+                  <th>Points for task</th>
+                  <th>complete task</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="form-row">
+                  <form id="task-form">
+                    <td colspan="4">
+                    </td>
+                  </form>
+                </tr>
+              </tbody>
+            </table>
 				</div>
+      </div>
     </div>
+
+
     
-       <div class="row mx-auto">
-          <div class=" card col-5-sm">
+       <div class="row mt-5 align-items-start justify-content-between">
+          <div class="col-5-sm card">
+            <div class="card-body">
               <h3>Add a New user</h3>
                 <table class="table table-striped">
                   <thead>
@@ -60,10 +66,11 @@
                     </tr>
                   </tbody>
                 </table>
+            </div>
           </div>
         
         <div class="col-7-sm">
-          <div class="card ml-4" style="width: 20rem;">
+          <div class=" card ml-4" style="width: 30rem;">
             <div class="card-body">
               <form id="cms">
 					      <div class="form-group">
@@ -71,7 +78,7 @@
 						      <input placeholder="Post Title" type="text" class="form-control" id="title">
 						    <br/>
 						    <label for="body">Body:</label>
-						      <textarea placeholder="Post Body" class="form-control" rows="10" id="body"></textarea>
+						      <textarea placeholder="Post Body" class="form-control" rows="3" id="body"></textarea>
 						    <div class="form-group">
 						    	<label for="category">Select User:</label>
 							    <select class="custom-select" id="author">
@@ -84,11 +91,12 @@
             </div>
           </div>
         </div>
-        </div>
       </div>
+      
+      
    
   </div>
-  </div>
+</div>
 
  
 
