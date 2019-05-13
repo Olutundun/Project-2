@@ -1,0 +1,98 @@
+
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>
+  <div class="container mx-auto">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Welcome <span class="member-name"></span></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+				<div class="author-container">
+					<h1>Tasks</h1>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Current Tasks</th>
+								<th>Points for task</th>
+								<th>complete task</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="form-row">
+								<form id="task-form">
+									<td colspan="4">
+									</td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+    </div>
+      <div class="row mx-auto">
+        <div class="col-sm-5">
+          <div class="card ml-3 mr-3" style="width: 25rem">
+            <div class="card-body">
+              <h5 class="card-title">Card Title</h5>
+              <h3>Add a New user</h3>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Name</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="form-row">
+								<form id="author-form">
+									<td colspan="5">
+										<input placeholder="Enter a name" id="author-name" type="text" />
+									</td>
+									<td><button type="submit" class="btn btn-success">Create User</button>
+									</td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-5">
+          <div class="card" style="width: 25rem">
+            <div class="card-body">
+              <form id="cms">
+					      <div class="form-group">
+						      <label for="title">Title:</label>
+						      <input placeholder="Post Title" type="text" class="form-control" id="title">
+						    <br/>
+						    <label for="body">Body:</label>
+						      <textarea placeholder="Post Body" class="form-control" rows="10" id="body"></textarea>
+						    <div class="form-group">
+						    	<label for="category">Select User:</label>
+							    <select class="custom-select" id="author">
+  					    	</select>
+						    </div>
+						    <br/>
+						      <button type="submit" class="btn btn-success submit">Submit</button>
+					      </div>
+				      </form>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+  </div>
+
+ 
+
+
+
+
