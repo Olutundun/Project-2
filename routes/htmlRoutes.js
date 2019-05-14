@@ -11,16 +11,16 @@ module.exports = function(app) {
     if (req.users) {
       res.redirect("members");
     }
-    // res.sendFile(path.join(__dirname, "../public/signup.html"));
-    res.render("signup");
+    // res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("login");
   });
 
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.users) {
-      res.redirect("members");
+      res.redirect("login");
     }
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
+    // res.sendFile(path.join(__dirname, "../public/members.html"));
     res.render("login");
   });
 
@@ -29,5 +29,20 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     res.render("members");
   });
+
+  app.get("/signup", function(req, res) {
+    if (req.users) {
+      res.redirect("members");
+    }
+    res.render("members");
+  })
+
+  app.get("login", function(req, res) {
+    if (req.users) {
+      res.redirect("signup");
+    }
+    res.render("signup");
+    }
+  }
 
 };

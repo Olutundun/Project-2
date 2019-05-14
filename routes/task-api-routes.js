@@ -21,8 +21,8 @@ module.exports = function (app) {
                 id: req.params.id
             },
             include: [db.Users]
-        }).then(function (dbTasks) {
-            res.json(dbTasks);
+        }).then(function (dbTask) {
+            res.json(dbTask);
         });
     });
 
@@ -39,8 +39,8 @@ module.exports = function (app) {
             where: {
                 id: req.params.id
             }
-        }).then(function (dbTasks) {
-            res.json(dbTasks);
+        }).then(function (dbTask) {
+            res.json(dbTask);
         });
     });
 
@@ -50,8 +50,8 @@ module.exports = function (app) {
                 where: {
                     id: req.body.id
                 }
-            }).then(function (dbTasks) {
-            res.json(dbTasks);
+            }).then(function (dbTask) {
+            res.json(dbTask);
         });
     });
 };
