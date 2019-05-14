@@ -2,11 +2,8 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/Users", function(req, res) {
-    // Here we add an "include" property to our options in our findAll query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Post
     db.User.findAll({
-      include: [db.Post]
+      include: [db.Tasks]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
@@ -20,19 +17,19 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Post]
+      include: [db.Tasks]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
 
-  app.post("/api/Users", function(req, res) {
+  app.post("/api/users", function(req, res) {
     db.User.create(req.body).then(function(dbUser) {
       res.json(dbUser);
     });
   });
 
-  app.delete("/api/Users/:id", function(req, res) {
+  app.delete("/api/users/:id", function(req, res) {
     db.User.destroy({
       where: {
         id: req.params.id
