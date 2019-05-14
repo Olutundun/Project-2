@@ -3,6 +3,7 @@ $(document).ready(function() {
     // and updates the HTML on the page
     $.get("/api/user_data").then(function(data) {
       $(".member-name").text(data.name);
+      $(".member-id").val(data.id);
       $(".option-select").text(data.name);
       //$(".member-name").text(data.email);git
      
@@ -13,7 +14,8 @@ $(document).ready(function() {
       var newTask = {
         name: $(".option-select").val().trim(),
         task: $("#task-body").val().trim(),
-        score: $("#points").val().trim()
+        score: $("#points").val().trim(),
+        UserId: $(".member-id").val()
       };
       console.log(newTask);
 
