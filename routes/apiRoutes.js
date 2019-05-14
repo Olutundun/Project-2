@@ -62,5 +62,19 @@ module.exports = function(app) {
       });
     }
   });
+  app.post("/api/assigntask", function(req, res) {
+    console.log(req.body);
+    db.Task.create({
+      name: req.body.name,
+      task: req.body.task,
+   
+    }).then(function() {
+      res.redirect(307, "/members");
+    }).catch(function(err) {
+      console.log(err);
+      res.json(err);
+      // res.status(422).json(err.errors[0].message);
+    });
+  });
 
 };
