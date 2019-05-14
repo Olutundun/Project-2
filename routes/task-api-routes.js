@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-    app.get("/api/Tasks", function (req, res) {
+    app.get("/api/tasks", function (req, res) {
         var query = {};
         if (req.query.user_id) {
             query.UserId = req.query.user_id;
@@ -10,12 +10,12 @@ module.exports = function (app) {
         db.Tasks.findAll({
             where: query,
             include: [db.Users]
-        }).then(function (dbTask) {
-            res.json(dbTask);
+        }).then(function (dbTasks) {
+            res.json(dbTasks);
         });
     });
-
-    app.get("/api/Tasks/:id", function (req, res) {
+    // Get route for retrieving a single task
+    app.get("/api/tasks/:id", function (req, res) {
         db.Tasks.findOne({
             where: {
                 id: req.params.id
@@ -25,16 +25,14 @@ module.exports = function (app) {
             res.json(dbTasks);
         });
     });
-
-    app.post("/api/Tasks", function (req, res) {
-
-        //not sure if "body" is the best param to use below, i want to make sure it sybolizes the correct thing for easy reading.
-        db.Tasks.create(req.body).then(function (dbTask) {
-            res.json(dbTask);
+    // POST route for saving a new task
+    app.post("/api/tasks", function (req, res) {
+        db.Tasks.create(req.body).then(function (dbTasks) {
+            res.json(dbTasks);
         });
     });
-
-    app.delete("/api/Tasks/:id", function (req, res) {
+    // DELETE route for deleting tasks
+    app.delete("/api/tasks/:id", function (req, res) {
         db.Tasks.destroy({
             where: {
                 id: req.params.id
@@ -43,8 +41,8 @@ module.exports = function (app) {
             res.json(dbTasks);
         });
     });
-
-    app.put("/api/Tasks", function (req, res) {
+    // PUT route for updating tasks
+    app.put("/api/tasks", function (req, res) {
         db.Tasks.update(
             req.body, {
                 where: {
