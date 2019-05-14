@@ -3,31 +3,33 @@ $(document).ready(function() {
     // and updates the HTML on the page
     $.get("/api/user_data").then(function(data) {
       $(".member-name").text(data.name);
+      $(".option-select").text(data.name);
       //$(".member-name").text(data.email);git
      
     });
 
-    var nameInput = $("#user-name");
-    $(document).on("submit", "#user-form", userFormSubmit);
-    getUsers();
-    
-    function userFormSubmit(event) {
+    $("#submit-task").on("click", function(event){
       event.preventDefault();
-      // Don't do anything if the name fields hasn't been filled out
-      if (!nameInput.val().trim().trim()) {
-        return;
-      }
-      // Calling the upsertAuthor function and passing in the value of the name input
-      upsertUser({
-        name: nameInput
-          .val()
-          .trim()
-      });
-    }
-    function upsertUser(userData) {
-      $.post("/api/Users", userData)
-        .then(getUsers);
-    }
+      var newTask = {
+        name: $(".option-select").val().trim(),
+        task: $("#task-body").val().trim(),
+        score: $("#points").val().trim()
+      };
+      console.log(newTask);
+
+      $.post("/api/Tasks", newTask)
+      .then(function(data) {
+        console.log(data);
+      })
+    })
+
+  //   $.get("api/user_data", function(data) {
+  //     if (data.length !==0) {
+  //       for (i = 0; i < data.length; i++) {
+  //         $(".custome-select").text("<option>" + data[i].name + "</option>");
+  //       }
+  //     }
+  //   })
   });
 
   

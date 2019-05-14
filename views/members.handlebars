@@ -74,14 +74,17 @@
           <div class="card-body">
             <form id="cms">
               <div class="form-group">
-                <label for="title">Title:</label>
-                <input placeholder="Post Title" type="text" class="form-control" id="title">
+          
+                <label for="Task">Task:</label>
+                <textarea placeholder="Task Body" class="form-control" rows="3" id="task-body"></textarea>
+                
+                <label for="title">Points:</label>
+                <input placeholder="How many points is this task worth" type="text" class="form-control" id="points">
                 <br />
-                <label for="body">Body:</label>
-                <textarea placeholder="Post Body" class="form-control" rows="3" id="body"></textarea>
                 <div class="form-group">
                   <label for="category">Select User:</label>
                   <select class="custom-select" id="user">
+                  <option class="option-select"></option>
                   </select>
                 </div>
                 <br />
