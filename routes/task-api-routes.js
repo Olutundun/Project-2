@@ -48,7 +48,7 @@ module.exports = function (app) {
     });
 
 
-    // PUT route for updating tasks
+    // PUT route for completing tasks
     app.put("/api/task/:id", function (req, res) {
         console.log(req.params);
         db.Tasks.update({
