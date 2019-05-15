@@ -1,15 +1,15 @@
 var db = require("../models");
 
-module.exports = function(app) {
-  app.get("/api/Users", function(req, res) {
+module.exports = function (app) {
+  app.get("/api/Users", function (req, res) {
     db.User.findAll({
       include: [db.Tasks]
-    }).then(function(dbUser) {
+    }).then(function (dbUser) {
       res.json(dbUser);
     });
   });
 
-  app.get("/api/Users/:id", function(req, res) {
+  app.get("/api/Users/:id", function (req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Post
@@ -18,13 +18,13 @@ module.exports = function(app) {
         id: req.params.id
       },
       include: [db.Tasks]
-    }).then(function(dbUser) {
+    }).then(function (dbUser) {
       res.json(dbUser);
     });
   });
 
-  app.post("/api/users", function(req, res) {
-    db.User.create(req.body).then(function(dbUser) {
+  app.post("/api/users", function (req, res) {
+    db.User.create(req.body).then(function (dbUser) {
       res.json(dbUser);
     });
   });
@@ -44,7 +44,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
-    }).then(function(dbUser) {
+    }).then(function (dbUser) {
       res.json(dbUser);
     });
   });
