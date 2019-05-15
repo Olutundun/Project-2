@@ -24,7 +24,6 @@
           <table class="table table-bordered table-dark text-warning" id="table">
             <thead>
               <tr>
-                <th scope="col">Name</th>
                 <th scope="col">Current Tasks</th>
                 <th scope="col">Points for task</th>
                 <th scope="col">Complete task</th>
@@ -35,7 +34,6 @@
               <tr>
                {{#each tasks_data}}
                   <tr>
-                  <td>{{name}}</td>
                   <td>{{task}}</td>
                   <td>{{score}}</td>
                   <td><button class="chang-complete btn btn-warning" data-id="{{id}}" data-newcomplete="{{completed}}">
