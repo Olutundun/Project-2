@@ -5,8 +5,26 @@ $(document).ready(function() {
       $(".member-name").text(data.name);
       $(".member-id").val(data.id);
       $(".option-select").text(data.name);
-      //$(".member-name").text(data.email);git
-     
+      
+    });
+
+    $(".change-devour").on("click", function(event) {
+      var id = $(this).data("id");
+      var newDevour = $(this).data("newdevour");
+  
+      var newDevourState = {
+        devoured: true
+      };
+  
+      $.ajax("/api/burger/" + id, {
+        type: "PUT",
+        data: newDevourState
+      }).then(
+        function() {
+          console.log("changed devour to", newDevour);
+          location.reload();
+        }
+      );
     });
 
     $("#submit-task").on("click", function(event){
@@ -22,14 +40,22 @@ $(document).ready(function() {
       $.post("/api/Tasks", newTask)
       .then(function(data) {
         console.log(data);
+        location.reload();
       })
-    })
+    });
 
-  //   $.get("api/user_data", function(data) {
-  //     if (data.length !==0) {
-  //       for (i = 0; i < data.length; i++) {
-  //         $(".custome-select").text("<option>" + data[i].name + "</option>");
-  //       }
-  //     }
-  //   })
-  });
+    $(".delete-task").on("click", deleteTask);
+
+    function deleteTask(event) {
+      event.stopPropagation();
+      var id = $(this).data("id");
+      $.ajax({
+        method: "Delete",
+        url: "/api/tasks/" + id
+      }).then
+      location.reload();
+    }
+
+  
+});
+

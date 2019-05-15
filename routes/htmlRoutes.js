@@ -11,38 +11,40 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect("members");
     }
-
+    
     res.render("login");
   });
 
-  app.get("/signup", function (req, res) {
-
+  app.get("/signup", function(req, res) {
+    
     if (req.user) {
       res.redirect("members");
     }
-
+   
     res.render("signup");
   });
 
-  app.get("/login", function (req, res) {
-
+  app.get("/login", function(req, res) {
+    
     if (req.user) {
       res.redirect("members");
     }
-
+   
     res.render("login");
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, function (req, res) {
+  app.get("/members", isAuthenticated, function(req, res) {
+    //make api call to tasks and store it in varaiable
     db.Tasks.findAll({
       where: {UserId: req.user.id}
-     }).then(function (data) {
-   res.render("members", {tasks_data: data});
-     });
-    // res.render("members", {tasks: data});
-    console.log(req.user.id)
-  });
+    }).then(function(data){
+      res.render("members", {tasks_data: data});
+    })
+    console.log(req.user.id);
+  
+    });
+  };
 
-};
+
