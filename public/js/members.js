@@ -28,7 +28,6 @@ $(document).ready(function() {
     });
 
     $(".delete-task").on("click", deleteTask);
-
     function deleteTask(event) {
       event.stopPropagation();
       var id = $(this).data("id");
@@ -38,7 +37,14 @@ $(document).ready(function() {
       }).then
       location.reload();
     }
+      function totalScore() {
+        $.get("/api/tasks", function (data){
+          tasks = data;
+          console.log(tasks);
+        }).then 
+        
+      }
 
-  
+      totalScore();
 });
 
