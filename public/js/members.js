@@ -30,14 +30,14 @@ $(document).ready(function() {
     $("#submit-task").on("click", function(event){
       event.preventDefault();
       var newTask = {
-        name: $(".option-select").val().trim(),
+        name: $(".option-select").val(),
         task: $("#task-body").val().trim(),
         score: $("#points").val().trim(),
         UserId: $(".member-id").val()
       };
       console.log(newTask);
 
-      $.post("/api/Tasks", newTask)
+      $.post("/api/tasks", newTask)
       .then(function(data) {
         console.log(data);
         location.reload();
