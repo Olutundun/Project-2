@@ -11,7 +11,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
+        <h1 class="text-warning">Welcome <span class="member-name"></span></h1>
         <input type="text" val="" class="member-id" style="visibility: hidden">
       </div>
     </div>
@@ -32,15 +32,19 @@
               </tr>
             </thead>
             <tbody>
-               {{#each tasks_data}}
               <tr>
-              <td>{{name}}</td>
-              <td>{{task}}</td>
-              <td>{{score}}</td>
-              <td><button class="btn btn-warning">mark complete</button></td>
-              <td><button class="btn btn-danger">Delete</button></td>
-              </tr>
+               {{#each tasks_data}}
+                  <tr>
+                  <td>{{name}}</td>
+                  <td>{{task}}</td>
+                  <td>{{score}}</td>
+                  <td><button class="chang-complete btn btn-warning" data-id="{{id}}" data-newcomplete="{{completed}}">
+                      Mark Complete
+                  </button></td>
+                  <td><button class="delete-task btn btn-danger" data-id="{{id}}">Delete</button></td>
+                  </tr>
                {{/each}}
+               </tr>
             </tbody>
           </table>
         </div>

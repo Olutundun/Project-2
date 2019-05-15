@@ -28,7 +28,17 @@ module.exports = function(app) {
       res.json(dbUser);
     });
   });
-
+  app.put("/api/users/:id", function(req,res){
+    db.User.update({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Tasks]
+    }).then(function(dbUser){
+      res.json(dbUser);
+    });
+  });
+  
   app.delete("/api/users/:id", function(req, res) {
     db.User.destroy({
       where: {
