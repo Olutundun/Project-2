@@ -12,6 +12,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>Welcome <span class="member-name"></span></h2>
+        <input type="text" val="" class="member-id" style="visibility: hidden">
       </div>
     </div>
 
@@ -55,6 +56,12 @@
               </tr>
             </thead>
             <tbody>
+              <ul>
+              {{#each tasks_data}}
+                <p>{{name}}</p>
+                <p>{{score}} </p>
+              {{/each}}
+              </ul>
               <tr id="form-row">
                 <form id="author-form">
                   <td colspan="5">

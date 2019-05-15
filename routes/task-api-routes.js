@@ -28,7 +28,11 @@ module.exports = function (app) {
     // POST route for saving a new task
     app.post("/api/tasks", function (req, res) {
         db.Tasks.create(req.body).then(function (dbTasks) {
+            
             res.json(dbTasks);
+            
+            // need to pass in the UserId in another json object here
+
         });
     });
     // DELETE route for deleting tasks
