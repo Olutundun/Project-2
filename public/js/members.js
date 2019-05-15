@@ -5,7 +5,7 @@ $(document).ready(function() {
       $(".member-name").text(data.name);
       $(".member-id").val(data.id);
       $(".option-select").text(data.name);
-      //$(".member-name").text(data.email);git
+      
      
     });
 
@@ -25,15 +25,22 @@ $(document).ready(function() {
       })
     })
 
-  //   $.get("api/user_data", function(data) {
-  //     if (data.length !==0) {
-  //       for (i = 0; i < data.length; i++) {
-  //         $(".custome-select").text("<option>" + data[i].name + "</option>");
-  //       }
-  //     }
-  //   })
-  });
+  //   $.get("api/Tasks", function(data) {
+  //   //   var newRow = $("<tr>").append(
+        
+  //   //     $("<td>").text(data.name),
+  //   //     $("<td>").text(data.task),
+  //   //     $("<td>").text(data.score),
+  //   //     $("<td>").text(data.completed),
+       
+  //   // );
+
+  //   // $("#table > tbody").append(newRow);
+  //   return {
+  //     task: data
+  //   }
+  // });
 
   
+});
 
-  
