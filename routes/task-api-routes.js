@@ -47,7 +47,7 @@ module.exports = function (app) {
         });
     });
     // PUT route for updating tasks
-    app.put("/api/tasks", function (req, res) {
+    app.put("/api/tasks/:id", function (req, res) {
         db.Tasks.update(
             req.body, {
                 where: {

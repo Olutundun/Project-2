@@ -26,6 +26,24 @@ $(document).ready(function() {
         location.reload();
       })
     });
+    $(".change-complete").on("click", changeCompleted);
+    function changeCompleted(event){
+      event.stopPropagation();
+      var id = $(this).data("id");
+      var newCompleted = $(this).data("newcomplete");
+      var newCompletedState = {
+        completed: true
+      };
+      $.ajax({
+        method: "PUT",
+        url: "/api/tasks/" + id,
+        data: newCompletedState
+      }).then(
+        function(){
+          console.log("changed completed to ", newCompleted)
+        }
+      );
+    };
 
     $(".delete-task").on("click", deleteTask);
 
