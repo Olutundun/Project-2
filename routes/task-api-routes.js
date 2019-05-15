@@ -46,16 +46,6 @@ module.exports = function (app) {
             res.json(dbTasks);
         });
     });
-<<<<<<< HEAD
-    // PUT route for updating tasks
-    app.put("/api/tasks/:id", function (req, res) {
-        db.Tasks.update(
-            req.body, {
-                where: {
-                    id: req.body.id
-                }
-            }).then(function (dbTasks) {
-=======
 
 
     // PUT route for completing tasks
@@ -68,7 +58,6 @@ module.exports = function (app) {
                 id: req.params.id
             }
         }).then(function (dbTasks) {
->>>>>>> 8730ada75ac4d0791ed907a4618233f4862e4f81
             res.json(dbTasks);
         });
     });
