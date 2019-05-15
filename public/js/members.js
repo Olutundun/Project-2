@@ -36,6 +36,15 @@ $(document).ready(function() {
       }).then
       location.reload();
     }
+    function totalScore() {
+      $.get("/api/tasks", function (data){
+        tasks = data;
+        console.log(tasks);
+      }).then 
+      
+    }
+
+    totalScore();
 
     function completeTask(event) {
       event.preventDefault();
