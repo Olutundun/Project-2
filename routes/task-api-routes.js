@@ -8,8 +8,9 @@ module.exports = function (app) {
             query.UserId = req.query.user_id;
         }
         db.Tasks.findAll({
-            where: query,
-            include: [db.Users]
+            where: {
+                UserId:1
+            }
         }).then(function (dbTasks) {
             res.json(dbTasks);
         });

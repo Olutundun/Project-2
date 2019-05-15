@@ -5,28 +5,7 @@ $(document).ready(function() {
       $(".member-name").text(data.name);
       $(".member-id").val(data.id);
       $(".option-select").text(data.name);
-      //$(".member-name").text(data.email);git
       
-
-      function signUpNewUser(name, task) {
-        $.post("/api/assigntask", {
-          name: name,
-          task: task,
-      
-        }).then(function(data) {
-          window.location.replace(data);
-          // If there's an error, handle it by throwing up a bootstrap alert
-        }).catch(handleLoginErr);
-      };
-//create a onclick event for the new member create area
-
-      //store the user name, task
-      //then run the signupNewUser(name, email, pw)
-      //for ref look at signup.js and the api-routes.js under app.post/api/signup
-      //then double check to see the app.get/api/userdata from api routes and make sure they have all the values
-      //check your user model and see what are the rules for the db
-
-
      
     });
 
@@ -46,15 +25,22 @@ $(document).ready(function() {
       })
     })
 
-  //   $.get("api/user_data", function(data) {
-  //     if (data.length !==0) {
-  //       for (i = 0; i < data.length; i++) {
-  //         $(".custome-select").text("<option>" + data[i].name + "</option>");
-  //       }
-  //     }
-  //   })
-  });
+  //   $.get("api/Tasks", function(data) {
+  //   //   var newRow = $("<tr>").append(
+        
+  //   //     $("<td>").text(data.name),
+  //   //     $("<td>").text(data.task),
+  //   //     $("<td>").text(data.score),
+  //   //     $("<td>").text(data.completed),
+       
+  //   // );
+
+  //   // $("#table > tbody").append(newRow);
+  //   return {
+  //     task: data
+  //   }
+  // });
 
   
+});
 
-  
