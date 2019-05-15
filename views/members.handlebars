@@ -16,31 +16,33 @@
       </div>
     </div>
 
-    <div class="row card">
-      <div class="col-md-8 offset-md-2">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
         <div class="task-container">
-          <h1>Tasks</h1>
-
-          {{!-- <table class="table table-bordered table-dark" id="table">
+          <h1 class="text-warning">Tasks</h1>
+          
+          <table class="table table-bordered table-dark text-warning" id="table">
             <thead>
               <tr>
                 <th scope="col">Name</th>
                 <th scope="col">Current Tasks</th>
                 <th scope="col">Points for task</th>
-                <th scope="col">complete task</th>
+                <th scope="col">Complete task</th>
+                <th scope="col">Delete task</th>
               </tr>
             </thead>
             <tbody>
-              <td> --}}
-                <p>
-              {{#each tasks_data}}
-              <li>{{score}}</li>
-              <li>{{name}}</li>
-              {{/each}}
-              </p>
-              {{!-- </td>
+               {{#each tasks_data}}
+              <tr>
+              <td>{{name}}</td>
+              <td>{{task}}</td>
+              <td>{{score}}</td>
+              <td><button class="btn btn-warning">mark complete</button></td>
+              <td><button class="btn btn-danger">Delete</button></td>
+              </tr>
+               {{/each}}
             </tbody>
-          </table> --}}
+          </table>
         </div>
       </div>
     </div>
@@ -48,7 +50,7 @@
 
 
     <div class="row mt-5 align-items-start justify-content-between">
-      <div class="col-5-sm card">
+      <div class="col-5-sm card bg-dark text-warning">
         <div class="card-body">
           <h3>Add a New user</h3>
           <table class="table table-striped">
@@ -63,7 +65,7 @@
                   <td colspan="5">
                     <input placeholder="Enter a name" id="user-name" type="text" />
                   </td>
-                  <td><button type="submit" id="create-user" class="btn btn-success">Create User</button>
+                  <td><button type="submit" id="create-user" class="btn btn-warning">Create User</button>
                   </td>
                 </form>
               </tr>
@@ -73,7 +75,7 @@
       </div>
 
       <div class="col-7-sm">
-        <div class=" card ml-4" style="width: 30rem;">
+        <div class=" card bg-dark text-warning ml-4 mb-4" style="width: 30rem;">
           <div class="card-body">
             <form id="cms">
               <div class="form-group">
@@ -91,7 +93,7 @@
                   </select>
                 </div>
                 <br />
-                <button id="submit-task" type="submit" class="btn btn-success submit">Submit</button>
+                <button id="submit-task" type="submit" class="btn btn-warning submit">Submit</button>
               </div>
             </form>
           </div>

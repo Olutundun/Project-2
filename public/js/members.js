@@ -22,24 +22,10 @@ $(document).ready(function() {
       $.post("/api/Tasks", newTask)
       .then(function(data) {
         console.log(data);
+        location.reload();
       })
     })
 
-  //   $.get("api/Tasks", function(data) {
-  //   //   var newRow = $("<tr>").append(
-        
-  //   //     $("<td>").text(data.name),
-  //   //     $("<td>").text(data.task),
-  //   //     $("<td>").text(data.score),
-  //   //     $("<td>").text(data.completed),
-       
-  //   // );
-
-  //   // $("#table > tbody").append(newRow);
-  //   return {
-  //     task: data
-  //   }
-  // });
 
   
 });

@@ -44,8 +44,6 @@ module.exports = function(app) {
     })
     console.log(req.user.id);
   
-    
-      // res.render("members");
     });
   };
 
