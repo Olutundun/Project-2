@@ -3,7 +3,7 @@ $(document).ready(function() {
     // and updates the HTML on the page
     var name;
     $.get("/api/user_data").then(function(data) {
-      $(".member-name").text(data.name);
+      $(".member-name").html("<span> " + data.name + "!" + "</span>");
       $(".member-id").val(data.id);
       $(".option-select").text(data.name);
       name = data.name;
