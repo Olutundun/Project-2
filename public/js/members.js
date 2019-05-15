@@ -8,8 +8,6 @@ $(document).ready(function() {
       $(".option-select").text(data.name);
       name = data.name;
     });
-
-
     $("#submit-task").on("click", function(event){
       event.preventDefault();
       var newTask = {
@@ -66,6 +64,17 @@ $(document).ready(function() {
 
     totalScore();
 
+    function completeTask(event) {
+      event.preventDefault();
+      console.log("completeTask: " + completeTask);
+      var id = $(this).data("id");
+      $.ajax({
+        method: "Put",
+        url: "/api/task/" + id
+      }).then
+      location.reload();
+    }
+    $(".chang-complete").on("click", completeTask);
   
 });
 
