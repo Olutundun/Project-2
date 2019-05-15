@@ -7,26 +7,6 @@ $(document).ready(function() {
       $(".option-select").text(data.name);
       
     });
-
-    $(".change-devour").on("click", function(event) {
-      var id = $(this).data("id");
-      var newDevour = $(this).data("newdevour");
-  
-      var newDevourState = {
-        devoured: true
-      };
-  
-      $.ajax("/api/burger/" + id, {
-        type: "PUT",
-        data: newDevourState
-      }).then(
-        function() {
-          console.log("changed devour to", newDevour);
-          location.reload();
-        }
-      );
-    });
-
     $("#submit-task").on("click", function(event){
       event.preventDefault();
       var newTask = {
@@ -56,6 +36,17 @@ $(document).ready(function() {
       location.reload();
     }
 
+    function completeTask(event) {
+      event.preventDefault();
+      console.log("completeTask: " + completeTask);
+      var id = $(this).data("id");
+      $.ajax({
+        method: "Put",
+        url: "/api/task/" + id
+      }).then
+      location.reload();
+    }
+    $(".chang-complete").on("click", completeTask);
   
 });
 

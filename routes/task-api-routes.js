@@ -9,7 +9,7 @@ module.exports = function (app) {
         }
         db.Tasks.findAll({
             where: {
-                UserId:1
+                UserId: 1
             }
         }).then(function (dbTasks) {
             res.json(dbTasks);
@@ -29,9 +29,9 @@ module.exports = function (app) {
     // POST route for saving a new task
     app.post("/api/tasks", function (req, res) {
         db.Tasks.create(req.body).then(function (dbTasks) {
-            
+
             res.json(dbTasks);
-            
+
             // need to pass in the UserId in another json object here
 
         });
@@ -46,14 +46,18 @@ module.exports = function (app) {
             res.json(dbTasks);
         });
     });
+
+
     // PUT route for updating tasks
-    app.put("/api/tasks", function (req, res) {
-        db.Tasks.update(
-            req.body, {
-                where: {
-                    id: req.body.id
-                }
-            }).then(function (dbTasks) {
+    app.put("/api/task/:id", function (req, res) {
+        console.log(req.params);
+        db.Tasks.update({
+            completed: 1
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).then(function (dbTasks) {
             res.json(dbTasks);
         });
     });
