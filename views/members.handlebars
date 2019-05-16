@@ -1,27 +1,24 @@
 <div id="background-image">
   <nav class="navbar navbar-default">
-    <div class="container-fluid">
       <div class="navbar-header">
-        <a class="btn btn-warning" class="navbar-brand" href="/logout">
+        <a class="btn btn-warning mt-sm-4" class="navbar-brand" href="/logout">
           Logout
         </a>
       </div>
-    </div>
   </nav><br>
-  <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-warning">Welcome <span class="member-name"></span></h1>
+      <div class="col-sm-6 col-md-offset-3">
+        <h1 class="text-warning ml-sm-4">Welcome <span class="member-name"></span></h1>
         <input type="text" val="" class="member-id" style="visibility: hidden">
       </div>
     </div>
 
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-sm-8">
         <div class="task-container">
           <h1 class="text-warning">Chores</h1>
           
-          <table class="table table-bordered table-dark text-warning" id="table">
+          <table class="table table-bordered table-dark text-warning ml-2" id="table">
             <thead>
               <tr>
                 <th scope="col">Current Tasks</th>
@@ -45,11 +42,11 @@
     </div>
 
     <div class="row justify-content-center">
-      <div class="col-md-8">
+      <div class="col-sm-8">
         <div class="task-container">
           <h1 class="text-warning">Finished Chores</h1>
           
-          <table class="table table-bordered table-dark text-warning" id="table">
+          <table class="table table-bordered table-dark text-warning ml-2" id="table-complete">
             <thead>
               <tr>
                 <th scope="col">Completed Tasks</th>
@@ -79,8 +76,8 @@
 
 
 
-    <div class="row mt-5 align-items-start justify-content-center">
-      <div class="col-5-sm mb-5 card bg-dark text-warning">
+    <div class="row mt-5 align-items-sm-start justify-content-center">
+      <div class="add-score col-5-md mb-5 card bg-dark text-warning">
         <div class="card-body">
           <h3>Total points</h3>
           <h1 class="points text-center"></h1>
@@ -88,8 +85,8 @@
         </div>
       </div>
 
-      <div class="col-7-sm">
-        <div class=" card bg-dark text-warning ml-4 mb-4" style="width: 30rem;">
+      <div class="col-7-xs">
+        <div class="add-task-card card bg-dark text-warning ml-sm-5 mb-4">
           <div class="card-body">
             <form id="cms">
               <div class="form-group">
@@ -108,8 +105,4 @@
         </div>
       </div>
     </div>
-
-
-
-  </div>
 </div>
