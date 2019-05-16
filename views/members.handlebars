@@ -31,18 +31,46 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              
                {{#each tasks_data}}
+                {{#unless completed}}
+                  {{> tasks/task-block }}
+                  {{/unless}}
+               {{/each}}
+               
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="task-container">
+          <h1 class="text-warning">Finished Chores</h1>
+          
+          <table class="table table-bordered table-dark text-warning" id="table">
+            <thead>
+              <tr>
+                <th scope="col">Completed Tasks</th>
+                <th scope="col">Points for task</th>
+                <th scope="col">Complete task</th>
+                <th scope="col">Delete task</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+               {{#each tasks_data}}
+                {{#if completed}}
                   <tr>
                   <td>{{task}}</td>
                   <td>{{score}}</td>
-                  <td><button class="change-complete btn btn-warning" data-id="{{id}}" data-newcomplete="{{completed}}">
-                      Mark Complete
-                  </button></td>
+                  <td>Task completed!</td>
                   <td><button class="delete-task btn btn-danger" data-id="{{id}}">Delete</button></td>
-                  </tr>
+                  </tr>   
+                {{/if}}
                {{/each}}
-               </tr>
+               
             </tbody>
           </table>
         </div>
@@ -55,6 +83,7 @@
       <div class="col-5-sm mb-5 card bg-dark text-warning">
         <div class="card-body">
           <h3>Total points</h3>
+          <h1 class="points text-center"></h1>
           
         </div>
       </div>

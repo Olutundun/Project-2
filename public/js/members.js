@@ -2,6 +2,7 @@ $(document).ready(function() {
     // This file just does a GET request to figure out which user is logged in
     // and updates the HTML on the page
     var name;
+    var points = 0;
     $.get("/api/user_data").then(function(data) {
       $(".member-name").html("<span> " + data.name + "!" + "</span>");
       $(".member-id").val(data.id);
@@ -24,24 +25,7 @@ $(document).ready(function() {
         location.reload();
       })
     });
-    // $(".change-complete").on("click", changeCompleted);
-    // function changeCompleted(event){
-    //   event.stopPropagation();
-    //   var id = $(this).data("id");
-    //   var newCompleted = $(this).data("newcomplete");
-    //   var newCompletedState = {
-    //     completed: true
-    //   };
-    //   $.ajax({
-    //     method: "PUT",
-    //     url: "/api/tasks/" + id,
-    //     data: newCompletedState
-    //   }).then(
-    //     function(){
-    //       console.log("changed completed to ", newCompleted)
-    //     }
-    //   );
-    // };
+    
 
     $(".delete-task").on("click", deleteTask);
 
@@ -56,13 +40,16 @@ $(document).ready(function() {
     }
     function totalScore() {
       $.get("/api/tasks", function (data){
-        tasks = data;
-        console.log(tasks);
-      }).then 
+        
+        console.log(data);
+      }).then, function(keepScore) {
+
+      }
       
-    }
+    };
 
     totalScore();
+    $(".points").text(points);
 
     function completeTask(event) {
       event.preventDefault();
