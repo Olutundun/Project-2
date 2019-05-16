@@ -10,19 +10,13 @@ $ npm install
 
 In the config.json file, you will need to change the username and password to your own for the development object.
 
-====
-
-## Testing
-
-*If we have time we will implement testing*
-
-====
+==================================================================================================================
 
 ## Deployment
 
-*This will be Heroku*
+Deployed on Heroku at https://degoba.herokuapp.com/
 
-====
+==================================================================================================================
 
 ## Built with
 
@@ -32,7 +26,7 @@ In the config.json file, you will need to change the username and password to yo
 -MySQL
 -PassportJS
 
-====
+==================================================================================================================
 
 ## How it works
 
@@ -60,3 +54,6 @@ and add that chore's point value to the total points field:
 Step 5: Once a task is no longer needed, it can be deleted entirely. This will also remove that chore's point value from the total:
 
 ![alt text](https://github.com/Olutundun/Project-2/blob/master/public/images/Task-delete.png)
+
+==================================================================================================================
+
