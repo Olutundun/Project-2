@@ -30,7 +30,9 @@ In the config.json file, you will need to change the username and password to yo
 -Express
 -Handlebars
 -MySQL
+-PassportJS
 
 ====
 
-## 
+## How it works
+
