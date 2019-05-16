@@ -3,6 +3,7 @@ $(document).ready(function() {
     // and updates the HTML on the page
     var name;
     var points = 0;
+    $(".points").text(points);
     
     $.get("/api/user_data").then(function(data) {
       $(".member-name").html("<span> " + data.name + "!" + "</span>");
