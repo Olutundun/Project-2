@@ -19,11 +19,9 @@ $(document).ready(function() {
         score: $("#points").val().trim(),
         UserId: $(".member-id").val()
       };
-      console.log(newTask);
 
       $.post("/api/tasks", newTask)
       .then(function(data) {
-        console.log(data);
         location.reload();
       })
     });
@@ -44,7 +42,6 @@ $(document).ready(function() {
       $.get("/api/tasks", function (data){
         
       }).then (function(response) {
-        console.log(response);
         for (var i = 0; i < response.length; i++) {
           if (response[i].completed == true) {
              
@@ -61,7 +58,6 @@ $(document).ready(function() {
 
     function completeTask(event) {
       event.preventDefault();
-      console.log("completeTask: " + completeTask);
       var id = $(this).data("id");
       $.ajax({
         method: "Put",
