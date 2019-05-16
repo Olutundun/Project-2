@@ -3,6 +3,7 @@ $(document).ready(function() {
     // and updates the HTML on the page
     var name;
     var points = 0;
+    
     $.get("/api/user_data").then(function(data) {
       $(".member-name").html("<span> " + data.name + "!" + "</span>");
       $(".member-id").val(data.id);
@@ -41,15 +42,21 @@ $(document).ready(function() {
     function totalScore() {
       $.get("/api/tasks", function (data){
         
-        console.log(data);
-      }).then, function(keepScore) {
-
-      }
+      }).then (function(response) {
+        console.log(response);
+        for (var i = 0; i < response.length; i++) {
+          if (response[i].completed == true) {
+             
+            points += response[i].score;
+          }
+          $(".points").text(points);
+        };
+        
+      });
       
     };
-
     totalScore();
-    $(".points").text(points);
+    
 
     function completeTask(event) {
       event.preventDefault();
@@ -62,6 +69,6 @@ $(document).ready(function() {
       location.reload();
     }
     $(".change-complete").on("click", completeTask);
-  
+    
 });
 
