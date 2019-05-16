@@ -10,13 +10,13 @@ $ npm install
 
 In the config.json file, you will need to change the username and password to your own for the development object.
 
-==================================================================================================================
+======================
 
 ## Deployment
 
 Deployed on Heroku at https://degoba.herokuapp.com/
 
-==================================================================================================================
+======================
 
 ## Built with
 
@@ -26,7 +26,7 @@ Deployed on Heroku at https://degoba.herokuapp.com/
 -MySQL
 -PassportJS
 
-==================================================================================================================
+======================
 
 ## How it works
 
@@ -55,5 +55,5 @@ Step 5: Once a task is no longer needed, it can be deleted entirely. This will a
 
 ![alt text](https://github.com/Olutundun/Project-2/blob/master/public/images/Task-delete.png)
 
-==================================================================================================================
+======================
 
