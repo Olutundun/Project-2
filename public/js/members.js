@@ -6,10 +6,10 @@ $(document).ready(function() {
     $(".points").text(points);
     
     $.get("/api/user_data").then(function(data) {
-      $(".member-name").html("<span> " + data.name + "!" + "</span>");
-      $(".member-id").val(data.id);
-      $(".option-select").text(data.name);
       name = data.name;
+      $(".member-name").html("<span> " + name + "!" + "</span>");
+      $(".member-id").val(data.id);
+      $(".option-select").text(name);
     });
     $("#submit-task").on("click", function(event){
       event.preventDefault();
