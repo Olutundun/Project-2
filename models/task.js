@@ -1,26 +1,24 @@
 module.exports = function (sequelize, DataTypes) {
-    var Tasks = sequelize.define("Tasks", {
-        name: DataTypes.STRING,
-        task: DataTypes.TEXT
-      }, {
-        score: DataTypes.INTEGER,
-        defaultValue: '0'
-      }, {
-        completed: DataTypes.BOOLEAN,
-        defaultValue: false
-      }, {
-        TIMESTAMPS: false
-      });
+  var Tasks = sequelize.define("Tasks", {
+    name: DataTypes.STRING,
+    task: DataTypes.TEXT,
+    score: {
+      type: DataTypes.INTEGER,
+      defaultValue: '0'
+    },
+    completed: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
+    },
 
-      Tasks.associate = function (models) {
-        //this is to say that a task belongs to a certain User
-        //a task cannot be created without a user associated to it.
-        Tasks.belongsTo(models.User, {
-          foreignKey: {
-            allowNull: false
-          }
-
-        });
+  });
+  Tasks.associate = function (models) {
+    Tasks.belongsTo(models.User, {
+      foreignKey: {
+        allowNull: false
       }
-      return Tasks;
-    };
+    });
+  };
+
+  return Tasks;
+};

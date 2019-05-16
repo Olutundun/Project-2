@@ -4,7 +4,7 @@
   "description": "Project 2 Starter",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
     "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
@@ -17,7 +17,6 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.16.1",
     "mysql2": "^1.6.4",
-    "nodemon": "^1.19.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^4.41.2",
@@ -31,6 +30,7 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
+    "nodemon": "^1.19.0",
     "prettier": "^1.13.7"
   }
 }
